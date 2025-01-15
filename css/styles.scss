@@ -83,8 +83,8 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
+    scroll-behavior: smooth;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -104,6 +104,16 @@ section {
 
 body {
     line-height: 1;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    body {
+        scroll-behavior: auto;
+    }
 }
 
 ol,
@@ -132,4 +142,202 @@ table {
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --teal: #00c1b5;
+    --orange: #ff651a;
+    --yellow: #ffbe00;
+    --blue: #1d3fbb;
+    --red: #e30512;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    img {
+        height: 2rem;
+        width: auto;
+    }
+
+    a {
+        text-decoration: none;
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: black;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: y mandatory;
+
+    section#bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+
+        #info {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            width: 20rem;
+            margin: 1rem;
+            color: black;
+
+            p {
+                font-size: 1.125rem;
+                line-height: 1.25;
+                font-weight: 600;
+            }
+
+            span {
+                margin-top: 0.5rem;
+                font-size: 0.875rem;
+                font-weight: 400;
+
+                a {
+                    color: black;
+                    text-decoration: underline;
+                }
+            }
+
+            a#privacy-policy {
+                margin-top: 2.5rem;
+                font-size: 1.5rem;
+                list-style: 1.5;
+                font-weight: 600;
+                color: black;
+            }
+        }
+
+        div#side-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 1rem;
+            width: max-content;
+            margin: 1rem;
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+                font-weight: 600;
+            }
+        }
+    }
+
+    section.issue {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        scroll-behavior: smooth;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            height: 100vh;
+
+            img {
+                height: auto;
+                width: 28rem;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                letter-spacing: 0.05rem;
+                font-weight: 600;
+                color: black;
+            }
+
+            a {
+                text-decoration: none;
+
+                button {
+                    position: relative;
+                    margin-top: 0.5rem;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 0.5rem 1rem;
+                    background-color: transparent;
+                    border: 2px solid black;
+                    color: black;
+                    border-radius: 0.5rem;
+                    z-index: 3;
+                }
+
+                button:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    section#issue8 {
+        background-color: #f6e0a4;
+    }
+
+    section#issue7 {
+        background-color: #ff608c;
+    }
+    section#issue6 {
+        background-color: #ffffff;
+    }
+    section#issue5 {
+        background-color: #00c1b5;
+    }
+    section#issue4 {
+        background-color: #ff6519;
+    }
+    section#issue3 {
+        background-color: #ffbe00;
+    }
+    section#issue2 {
+        background-color: #1d3fbb;
+    }
+    section#issue1 {
+        background-color: #e30512;
+    }
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }
