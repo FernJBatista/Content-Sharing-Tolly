@@ -175,6 +175,24 @@ header {
             font-weight: 600;
             color: black;
         }
+
+        h2:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        img {
+            height: 1.35rem;
+        }
+        a {
+            h2 {
+                font-size: 1rem;
+            }
+        }
     }
 }
 
@@ -243,13 +261,14 @@ main {
             margin: 1rem;
 
             a {
+                font-size: 1rem;
                 color: black;
                 text-decoration: none;
             }
 
             a:hover {
                 text-decoration: underline;
-                font-weight: 600;
+                font-weight: 500;
             }
         }
     }
@@ -275,7 +294,7 @@ main {
 
             img {
                 height: auto;
-                width: 28rem;
+                max-width: 28rem;
                 object-fit: cover;
                 object-position: center;
             }
@@ -340,4 +359,54 @@ main {
 
 main::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        /*         scroll-snap-type: none; */
+
+        section#bottom {
+            display: none;
+
+            #info {
+                width: 18rem;
+
+                p {
+                    font-size: 0.825rem;
+                    line-height: 1.5;
+                }
+
+                span {
+                    font-size: 0.745rem;
+                }
+
+                a#privacy-policy {
+                    font-size: 1rem;
+                }
+            }
+
+            div#side-nav {
+                gap: 0.825rem;
+                margin: 0.825rem;
+
+                a {
+                    font-size: 0.825rem;
+                }
+            }
+        }
+
+        section.issue {
+            div {
+                img {
+                    max-width: 20rem;
+                }
+
+                a {
+                    button {
+                        font-size: 0.825rem;
+                    }
+                }
+            }
+        }
+    }
 }

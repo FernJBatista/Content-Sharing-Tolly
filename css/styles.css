@@ -173,7 +173,19 @@ header a h2 {
   font-weight: 600;
   color: black;
 }
+header a h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+@media screen and (max-width: 768px) {
+  header img {
+    height: 1.35rem;
+  }
+  header a h2 {
+    font-size: 1rem;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -235,12 +247,13 @@ main section#bottom div#side-nav {
   margin: 1rem;
 }
 main section#bottom div#side-nav a {
+  font-size: 1rem;
   color: black;
   text-decoration: none;
 }
 main section#bottom div#side-nav a:hover {
   text-decoration: underline;
-  font-weight: 600;
+  font-weight: 500;
 }
 main section.issue {
   scroll-snap-align: start;
@@ -263,7 +276,7 @@ main section.issue div {
 }
 main section.issue div img {
   height: auto;
-  width: 28rem;
+  max-width: 28rem;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -321,4 +334,39 @@ main section#issue1 {
 
 main::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    /*         scroll-snap-type: none; */
+  }
+  main section#bottom {
+    display: none;
+  }
+  main section#bottom #info {
+    width: 18rem;
+  }
+  main section#bottom #info p {
+    font-size: 0.825rem;
+    line-height: 1.5;
+  }
+  main section#bottom #info span {
+    font-size: 0.745rem;
+  }
+  main section#bottom #info a#privacy-policy {
+    font-size: 1rem;
+  }
+  main section#bottom div#side-nav {
+    gap: 0.825rem;
+    margin: 0.825rem;
+  }
+  main section#bottom div#side-nav a {
+    font-size: 0.825rem;
+  }
+  main section.issue div img {
+    max-width: 20rem;
+  }
+  main section.issue div a button {
+    font-size: 0.825rem;
+  }
 }
